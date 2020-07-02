@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-abr-2020 19:09:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJOS.EmpleDepart" table="emple_depart" catalog="bd_empleados_hibernate_2019_encript" optimistic-lock="version">
+        <composite-id name="id" class="POJOS.EmpleDepartId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="nif" type="string">
+                <column name="nif" length="9" />
+            </key-property>
+            <key-property name="nombre" type="string">
+                <column name="nombre" length="15" />
+            </key-property>
+            <key-property name="apellidos" type="string">
+                <column name="apellidos" length="25" />
+            </key-property>
+            <key-property name="descripcion" type="string">
+                <column name="descripcion" length="50" />
+            </key-property>
+            <key-property name="localizacion" type="string">
+                <column name="localizacion" length="50" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

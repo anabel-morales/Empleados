@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-abr-2020 19:09:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJOS.Departamento" table="departamento" catalog="bd_empleados_hibernate_2019_encript" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="codigo" type="string">
+            <column name="codigo" length="2" not-null="true" unique="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="50" not-null="true" />
+        </property>
+        <property name="localizacion" type="string">
+            <column name="localizacion" length="50" not-null="true" />
+        </property>
+        <set name="empleados" table="empleado" cascade="all" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idDepartamento" />
+            </key>
+            <one-to-many class="POJOS.Empleado" />
+        </set>
+    </class>
+</hibernate-mapping>
